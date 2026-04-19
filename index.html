@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraken ROV Interface</title>
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Roboflow browser inference -->
+    <script src="https://cdn.jsdelivr.net/npm/inferencejs"></script>
+</head>
+<body>
+    <nav>
+        <img src="static/media/kraken_logo.jpeg" alt="kraken logo" class="logo">
+        <h1>Kraken ROV Pilot Interface</h1>
+    </nav>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="camera-wrapper">
+                <img id="front-stream" src="/front" alt="front camera stream">
+                <canvas id="front-overlay"></canvas>
+            </div>
+            <div class="compartment-label">Front camera</div>
+            <div id="detect-status" class="detect-status">loading model...</div>
+        </div>
+
+        <div class="grid-item">
+            <img class="camera-img" src="/gripper" alt="gripper camera stream">
+            <div class="compartment-label">Gripper camera</div>
+        </div>
+
+        <div class="grid-item">
+            <img class="camera-img" src="/rear" alt="rear camera stream">
+            <div class="compartment-label">Rear camera</div>
+        </div>
+
+        <div class="grid-item">
+            <div class="compartment-label">Sensor Readings</div>
+            <div class="sensor-placeholder">No sensor data connected yet</div>
+        </div>
+    </div>
+
+    <script src="static/app.js"></script>
+</body>
+</html>
